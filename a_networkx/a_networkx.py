@@ -1,9 +1,16 @@
 # !/usr/bin/python
 # -*- coding:utf-8 -*-
+import numpy
 import networkx as nx
 
-g=nx.Graph()#创建空的无向图
-g=nx.DiGraph()#创建空的有向图
-g.add_node(1)
-g.add_nodes_from([2,3,4])
-print(g.nodes())
+A = numpy.matrix([[1, 1], [2, 1]])
+G = nx.from_numpy_matrix(A)
+print(G.edges(data=True))
+
+import numpy
+
+dt = [('weight', float), ('cost', int)]
+A = numpy.matrix([[(1.0, 2)]], dtype=dt)
+print(A)
+G = nx.from_numpy_matrix(A)
+print(G.edges(data=True))
