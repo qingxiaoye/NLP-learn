@@ -6,7 +6,7 @@ def get_stopwords():
     logging.basicConfig(format='%(asctime)s:%(levelname)s:%(message)s', level=logging.INFO)
     # 加载停用词表
     stopword_set = set()
-    with open("/home/user/huanglhy/QIA_Serve_Production/heyi_kafka/src/app/libs/knowledge/stopwords.txt", 'r', encoding="utf-8") as stopwords:
+    with open("stopwords.txt", 'r', encoding="utf-8") as stopwords:
         for stopword in stopwords:
             stopword_set.add(stopword.strip("\n"))
     return stopword_set
